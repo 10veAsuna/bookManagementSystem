@@ -23,6 +23,9 @@
     <ClInclude Include="borrowRecord.h" />
     <ClInclude Include="LibraryManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
