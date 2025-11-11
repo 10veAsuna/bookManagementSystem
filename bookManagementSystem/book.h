@@ -4,7 +4,7 @@
 
 #include <string>
 
-namespace Book {
+namespace Library {
 	class Book {
 	private:
 		std::string ISBN;
@@ -18,33 +18,50 @@ namespace Book {
 		//默认构造函数
 		Book() = default;
 		//含参构造函数
-		Book(std::string i, std::string n,double p, std::string a, int q) : ISBN(i), name(n), author(a), quantityInStock(q), borrowTimes(0),price(p) {};
+		Book(std::string i, std::string n, std::string a , double p, int q) : ISBN(i), name(n), author(a),  price(p), quantityInStock(q), borrowTimes(0) {};
 		
-		std::string showISBN() const{
+		std::string getISBN() const{
 			return ISBN;
 		}
 
-		std::string showName() const{
+		std::string getName() const{
 			return name;
 		}
 
-		std::string showAuthor() const{
+		std::string getAuthor() const{
 			return author;
 		}
 
-		int showQuantityInStock() const {
+		int getQuantityInStock() const {
 			return quantityInStock;
 		}
 
-		int showBorrowTimes() const {
+		int getBorrowTimes() const {
 			return borrowTimes;
 		}
 
-		double showPrice()const {
+		double getPrice()const {
 			return price;
 		}
 
+		//设置库存和借阅次数的方法
+		void setQuantityInStock(int quantity) {
+			quantityInStock = quantity;
+		}
 
+		void increaseBorrowTimes() {
+			borrowTimes++;
+		}
+
+		void decreaseQuantity() {
+			if (quantityInStock > 0){	
+				quantityInStock--;
+			}
+		}
+
+		void increaseQuantity() {
+			quantityInStock++;
+		}
 	};
 }
 #endif // !BOOK_H

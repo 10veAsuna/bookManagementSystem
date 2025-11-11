@@ -21,5 +21,8 @@
     <ClInclude Include="borrowRecord.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LibraryManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

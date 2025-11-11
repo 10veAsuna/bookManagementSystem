@@ -1,36 +1,46 @@
 #pragma once
 #ifndef BORROWRECORD_H
 #define BORROWRECORD_H
-#include "book.h"
+
 #include <string>
-namespace BorrowRecord {
+
+namespace Library {
 	class BorrowRecord
 	{
 	public:
 		BorrowRecord() = default;
-		BorrowRecord(int id, int is, std::string b, std::string e, std::string r) :isbn(is), idCardNumber(id) , borrowDay(b) , expectedReturnDay(e), realReturnDay(r){};
-		int showIDCardNumber()const {
+		BorrowRecord(int id, std::string is, std::string b, std::string e) :isbn(is), idCardNumber(id) , borrowDay(b) , expectedReturnDay(e){};
+		
+		int getIDCardNumber()const {
 			return idCardNumber;
 		}
 
-		int showIsbn()const {
+		std::string getIsbn()const {
 			return isbn;
 		}
 
-		std::string showBorrowDay()const {
+		std::string getBorrowDay()const {
 			return borrowDay;
 		}
 
-		std::string showExpectedReturnDay()const {
+		std::string getExpectedReturnDay()const {
 			return expectedReturnDay;
 		}
 
-		std::string showRealReturnDay()const {
+		std::string getRealReturnDay()const {
 			return realReturnDay;
+		}
+
+		void setRealReturnDay(const std::string& returnDay) {
+			realReturnDay = returnDay;
+		}
+
+		bool isReturned() const {
+			return !realReturnDay.empty();
 		}
 	private:
 		int idCardNumber;		//借书证号
-		int isbn;				//书号
+		std::string isbn;				//书号
 		std::string borrowDay;	//借阅日期
 		std::string expectedReturnDay;	//应还日期
 		std::string realReturnDay;		//实际还书日期
